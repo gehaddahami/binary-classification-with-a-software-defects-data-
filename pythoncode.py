@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Nov 26 16:36:39 2023
-
-@author: daham
-"""
 
 #%% importing packages and libraries  
 import pandas as pd
@@ -18,10 +13,10 @@ from sklearn.metrics import confusion_matrix, accuracy_score, classification_rep
 
 
 #%% data loading and overview for the trainin and the testing sets 
-train = pd.read_csv(r"C:\Users\daham\OneDrive\Desktop\binary classification\train.csv\train.csv")
+train = pd.read_csv(r"C:\Users\OneDrive\Desktop\binary classification\train.csv\train.csv")
 train.head() 
 
-test = pd.read_csv(r"C:\Users\daham\OneDrive\Desktop\binary classification\test.csv\test.csv")
+test = pd.read_csv(r"C:\Users\OneDrive\Desktop\binary classification\test.csv\test.csv")
 test.head() 
 
 
@@ -103,7 +98,7 @@ print(test_pred)
 # saving the results into a local location 
 results = [False if x == 0 else True for x in test_pred]
 
-file_loc = r'C:\Users\daham\OneDrive\Desktop\binary classification\sample_submission.csv'
+file_loc = r'C:\Users\Desktop\binary classification\sample_submission.csv'
 result_file = pd.read_csv(file_loc).drop(["defects"],axis=1)
 
 results = pd.Series(results, name="defects")
